@@ -2,9 +2,9 @@
 
 ## Descripción del proyecto
 
-Este proyecto es una API REST básica desarrollada con Node.js y Express.js que permite gestionar tareas mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
+Este proyecto es una API REST desarrollada con Node.js y Express.js que permite gestionar una lista de tareas mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
 
-El objetivo es comprender cómo funciona un servidor con Express, el manejo de rutas y el intercambio de datos en formato JSON sin usar base de datos.
+Los datos se almacenan en un archivo local (data.js) utilizando un array de objetos, sin base de datos.
 
 ---
 
@@ -28,7 +28,19 @@ node index.js
 
 El servidor se ejecuta en:
 
-http://localhost:3000
+http://localhost:3000/tareas
+
+---
+
+## Estructura del proyecto
+
+mi-api-tareas
+│
+├── index.js
+├── routes.js
+├── data.js
+├── package.json
+├── node_modules
 
 ---
 
@@ -43,8 +55,8 @@ Respuesta:
 [
   {
     "id": 1,
-    "titulo": "Estudiar Express",
-    "descripcion": "Aprender CRUD",
+    "titulo": "Aprende Node.js",
+    "descripcion": "Estudiar los fundamentos",
     "completada": false
   }
 ]
@@ -55,17 +67,17 @@ POST http://localhost:3000/tareas
 Body:
 
 {
-  "titulo": "Hacer tarea IPG",
-  "descripcion": "Back End Express",
+  "titulo": "Nueva tarea",
+  "descripcion": "Ejemplo de creación",
   "completada": false
 }
 
 Respuesta:
 
 {
-  "id": 2,
-  "titulo": "Hacer tarea IPG",
-  "descripcion": "Back End Express",
+  "id": 3,
+  "titulo": "Nueva tarea",
+  "descripcion": "Ejemplo de creación",
   "completada": false
 }
 PUT - Actualizar tarea
@@ -76,7 +88,7 @@ Body:
 
 {
   "titulo": "Tarea actualizada",
-  "descripcion": "Editada",
+  "descripcion": "Modificada",
   "completada": true
 }
 
@@ -85,7 +97,7 @@ Respuesta:
 {
   "id": 1,
   "titulo": "Tarea actualizada",
-  "descripcion": "Editada",
+  "descripcion": "Modificada",
   "completada": true
 }
 DELETE - Eliminar tarea
@@ -99,11 +111,11 @@ Respuesta:
 }
 Evidencias
 
-Se realizaron pruebas en Postman para verificar el funcionamiento de la API:
+Se realizaron pruebas en Postman para validar el funcionamiento de la API:
 
 GET: listar tareas
 POST: crear tarea
 PUT: actualizar tarea
 DELETE: eliminar tarea
 
-(aqui se insertan las capturas de postman)
+(Aquí se insertan las capturas de Postman)
