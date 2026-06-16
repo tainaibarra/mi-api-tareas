@@ -2,7 +2,7 @@
 
 ## Descripción del proyecto
 
-Este proyecto es una API REST desarrollada con Node.js y Express.js que permite gestionar una lista de tareas mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
+Este proyecto es una API REST desarrollada con Node.js y Express.js que permite gestionar tareas mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
 
 Los datos se almacenan en un archivo local (data.js) utilizando un array de objetos, sin base de datos.
 
@@ -32,90 +32,72 @@ http://localhost:3000/tareas
 
 ---
 
-## Estructura del proyecto
-
-mi-api-tareas
-│
-├── index.js
-├── routes.js
-├── data.js
-├── package.json
-├── node_modules
-
----
-
 ## Endpoints de la API
 
 ### GET - Obtener todas las tareas
-
 GET http://localhost:3000/tareas
 
-Respuesta:
-```json
-[
-  {
-    "id": 1,
-    "titulo": "Aprende Node.js",
-    "descripcion": "Estudiar los fundamentos",
-    "completada": false
-  }
-]
-POST - Crear tarea
+---
 
+### POST - Crear una tarea
 POST http://localhost:3000/tareas
 
-Body:
+---
 
-{
-  "titulo": "Nueva tarea",
-  "descripcion": "Ejemplo de creación",
-  "completada": false
-}
+### PUT - Actualizar una tarea
+PUT http://localhost:3000/tareas/:id
 
-Respuesta:
+---
 
-{
-  "id": 3,
-  "titulo": "Nueva tarea",
-  "descripcion": "Ejemplo de creación",
-  "completada": false
-}
-PUT - Actualizar tarea
+### DELETE - Eliminar una tarea
+DELETE http://localhost:3000/tareas/:id
 
-PUT http://localhost:3000/tareas/1
+---
 
-Body:
+## Evidencias de pruebas en Postman
 
-{
-  "titulo": "Tarea actualizada",
-  "descripcion": "Modificada",
-  "completada": true
-}
+### Prueba 1: GET – listar todas las tareas
+Se realizó una solicitud GET al endpoint para obtener las tareas.
 
-Respuesta:
+![GET](images/get.png)
 
-{
-  "id": 1,
-  "titulo": "Tarea actualizada",
-  "descripcion": "Modificada",
-  "completada": true
-}
-DELETE - Eliminar tarea
+---
 
-DELETE http://localhost:3000/tareas/1
+### Prueba 2: POST – crear una nueva tarea
+Se creó una nueva tarea mediante POST.
 
-Respuesta:
+![POST](images/post.png)
 
-{
-  "mensaje": "Tarea eliminada correctamente"
-}
-Evidencias
+---
 
-Se realizaron pruebas en Postman para validar el funcionamiento de la API:
+### Prueba 3: Verificación de tareas registradas
+Se verificó que la tarea fue agregada correctamente.
 
-GET: listar tareas
-POST: crear tarea
-PUT: actualizar tarea
-DELETE: eliminar tarea
+![VERIFICACION](images/get.png)
 
-(Aquí se insertan las capturas de Postman)
+---
+
+### Prueba 4: PUT – actualización de una tarea
+Se actualizó una tarea existente.
+
+![PUT](images/put.png)
+
+---
+
+### Prueba 5: DELETE – eliminar tarea
+Se eliminó una tarea correctamente.
+
+![DELETE](images/delete.png)
+
+---
+
+### Prueba 6: Comprobación de error
+Se probó un recurso inexistente.
+
+![ERROR](images/error.png)
+
+---
+
+## Autor
+
+Taina Ibarra
